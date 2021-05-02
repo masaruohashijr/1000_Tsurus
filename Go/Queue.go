@@ -1,6 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"container/list"
+	"fmt"
+)
+
+type ohashiQueue struct {
+	queue *list.List
+}
+
+func (c *ohashiQueue) Enqueue(value string) {
+	c.queue.PushBack(value)
+}
 
 func main() {
 	var queue []string
